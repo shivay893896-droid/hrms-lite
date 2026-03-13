@@ -86,8 +86,7 @@ class Settings(BaseSettings):
     
     # CORS settings
     ALLOWED_ORIGINS: List[str] = Field(
-        default=["http://localhost:5173", "http://localhost:3000","http://localhost:3000",
-    "https://hrms-lite-phi-two.vercel.app",],
+        default=["http://localhost:5173", "http://localhost:3000","http://localhost:3000","https://hrms-lite-phi-two.vercel.app"],
         description="CORS allowed origins"
     )
 
