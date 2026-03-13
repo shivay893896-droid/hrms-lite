@@ -1,9 +1,10 @@
 # HRMS Lite – Employee Management System
 
-HRMS Lite is a modern Full-Stack Human Resource Management System built using FastAPI, MongoDB, and React (Vite). 
+HRMS Lite is a modern **Full-Stack Human Resource Management System** built using **FastAPI, MongoDB, and React (Vite)**.
+
 It provides a clean REST API and responsive UI to manage employees and HR operations.
 
-This project demonstrates production-ready backend architecture, Docker support, and cloud deployment.
+This project demonstrates **production-ready backend architecture, Docker support, and cloud deployment**.
 
 ---
 
@@ -25,25 +26,25 @@ https://github.com/shivay893896-droid/hrms-lite
 
 # Tech Stack
 
-Backend
+## Backend
 - FastAPI
 - Python 3.11
-- Motor (Async MongoDB)
+- Motor (Async MongoDB Driver)
 - Pydantic v2
 - Uvicorn
 - Docker
 
-Frontend
+## Frontend
 - React
 - Vite
 - Axios
 - React Query
 - TailwindCSS
 
-Database
+## Database
 - MongoDB Atlas
 
-Deployment
+## Deployment
 - Render (Backend)
 - Vercel (Frontend)
 - Docker
@@ -52,43 +53,54 @@ Deployment
 
 # Features
 
-Employee Management
+## Employee Management
 - Create employees
-- List employees
+- View employees
 - Pagination support
-- Update employee details
+- Update employee data
 - Delete employees
 
-API Features
+## API Features
 - RESTful API
 - Async database operations
 - Pydantic validation
-- Swagger API documentation
+- Swagger documentation
 
-Production Features
+## Production Features
 - Structured logging
 - Health check endpoint
 - Request tracking middleware
 - Error handling middleware
 - CORS security
 
-DevOps
+## DevOps
 - Docker support
-- Environment variables
+- Environment variable configuration
 - Cloud deployment ready
 
 ---
 
 # Project Structure
-'''
 
+```
 hrms-lite
 │
 ├── backend
 │ ├── app
 │ │ ├── api
+│ │ │ └── v1
+│ │ │ └── routers
+│ │ │
 │ │ ├── config
+│ │ │ ├── settings.py
+│ │ │ ├── database.py
+│ │ │ └── logging_config.py
+│ │ │
 │ │ ├── middleware
+│ │ │ ├── cors.py
+│ │ │ ├── request_middleware.py
+│ │ │ └── error_handler.py
+│ │ │
 │ │ ├── models
 │ │ ├── schemas
 │ │ ├── services
@@ -107,58 +119,73 @@ hrms-lite
 │ └── Dockerfile
 │
 └── docker-compose.yml
-'''
+```
+
 ---
 
 # Backend Setup
 
 Clone repository
 
+```
 git clone https://github.com/shivay893896-droid/hrms-lite
+```
 
+```
 cd hrms-lite/backend
-
+```
 
 Create virtual environment
 
+```
 python -m venv venv
+```
 
+Activate environment (Windows)
 
-Activate
-
-Windows
-
+```
 venv\Scripts\activate
-
+```
 
 Install dependencies
 
+```
 pip install -r requirements.txt
-
+```
 
 Run server
 
+```
 uvicorn app.main:app --reload
-
+```
 
 Backend runs at
 
+```
 http://localhost:8000
+```
 
 ---
 
 # Frontend Setup
 
+```
 cd frontend
+```
 
+```
 npm install
+```
 
+```
 npm run dev
-
+```
 
 Frontend runs at
 
+```
 http://localhost:5173
+```
 
 ---
 
@@ -166,66 +193,88 @@ http://localhost:5173
 
 Build containers
 
+```
 docker compose build
+```
 
+Start services
 
-Start containers
-
+```
 docker compose up
-
+```
 
 Stop containers
 
+```
 docker compose down
+```
 
 ---
 
 # API Testing
 
-Swagger UI
+Swagger Documentation
 
 https://hrms-lite-pitl.onrender.com/docs
 
-
 Example API
 
+```
 GET /api/v1/employees
+```
 
 ---
 
 # Health Check
 
+```
 GET /health
+```
 
-Example response
-'''
+Example Response
+
+```
 {
  "status": "healthy",
  "database": "healthy",
  "environment": "production"
 }
-'''
+```
+
 ---
 
 # Environment Variables
-'''
-Example .env
 
+Example `.env`
+
+```
 ENVIRONMENT=production
 MONGODB_URL=mongodb+srv://username:password@cluster.mongodb.net
 MONGODB_DB_NAME=hrms_lite
 ALLOWED_ORIGINS=["https://hrms-lite-phi-two.vercel.app"]
-'''
+```
+
+---
+
+# Future Improvements
+
+- JWT Authentication
+- Role Based Access Control
+- Attendance Management
+- Payroll Module
+- Email Notifications
+- CI/CD Pipeline
+
 ---
 
 # Author
-'''
-Aman Kumar
+
+Aman Kumar 
 Python Backend Developer 
 
 GitHub 
 https://github.com/shivay893896-droid
-'''
+
 ---
 
- If you like this project please give a star on GitH
+ If you like this project please give it a **star on GitHub**.
