@@ -1,304 +1,230 @@
-# HRMS Lite – Employee & Attendance Management System
+# HRMS Lite – Employee Management System
 
-## Project Overview
+HRMS Lite is a modern Full-Stack Human Resource Management System built using FastAPI, MongoDB, and React (Vite). 
+It provides a clean REST API and responsive UI to manage employees and HR operations.
 
-HRMS Lite is a lightweight Human Resource Management System designed to manage employee records and track daily attendance.
-
-The project demonstrates a complete **full-stack development workflow**, including API design, database integration, frontend UI development, validation, and cloud deployment.
-
-The goal of the project is to provide a simple internal HR tool that allows administrators to maintain employee data and record daily attendance through an intuitive interface.
+This project demonstrates production-ready backend architecture, Docker support, and cloud deployment.
 
 ---
 
 # Live Application
 
-Frontend (Vercel)
-https://hrms-lite-kappa-two.vercel.app/employees
+Frontend (Vercel) 
+https://hrms-lite-phi-two.vercel.app
 
-Backend API (Render)
-https://hrms-lite-mso6.onrender.com/
+Backend API (Render) 
+https://hrms-lite-pitl.onrender.com
 
-GitHub Repository
-https://github.com/namah798342-ctrl/hrms-lite
+API Documentation 
+https://hrms-lite-pitl.onrender.com/docs
 
----
-
-# System Architecture
-
-The application follows a simple client-server architecture.
-
-```
-React Frontend
-      ↓
-FastAPI Backend
-      ↓
-MongoDB Atlas Database
-```
-
-Frontend handles UI interactions, backend exposes REST APIs, and MongoDB stores employee and attendance data.
+GitHub Repository 
+https://github.com/shivay893896-droid/hrms-lite
 
 ---
 
-# Core Features
+# Tech Stack
 
-## Employee Management
+Backend
+- FastAPI
+- Python 3.11
+- Motor (Async MongoDB)
+- Pydantic v2
+- Uvicorn
+- Docker
 
-The system allows administrators to:
+Frontend
+- React
+- Vite
+- Axios
+- React Query
+- TailwindCSS
 
-* Create a new employee record
-* Store employee information such as:
+Database
+- MongoDB Atlas
 
-  * Employee ID (unique)
-  * Full Name
-  * Email Address
-  * Department
-* View a list of all employees
-* Remove employees when required
-* Search employees
-* Filter employees by department
-
----
-
-## Attendance Tracking
-
-Attendance functionality includes:
-
-* Mark attendance for employees
-* Select date and attendance status
-* Prevent duplicate attendance entries
-* View attendance history per employee
+Deployment
+- Render (Backend)
+- Vercel (Frontend)
+- Docker
 
 ---
 
-## Dashboard
+# Features
 
-The dashboard provides a quick overview of HR activity.
+Employee Management
+- Create employees
+- List employees
+- Pagination support
+- Update employee details
+- Delete employees
 
-* Employee directory overview
-* Access to attendance management
-* Quick navigation to key actions
+API Features
+- RESTful API
+- Async database operations
+- Pydantic validation
+- Swagger API documentation
 
----
+Production Features
+- Structured logging
+- Health check endpoint
+- Request tracking middleware
+- Error handling middleware
+- CORS security
 
-# User Interface
-
-The frontend is designed with usability in mind and includes:
-
-* Clean and minimal layout
-* Responsive design
-* Consistent typography and spacing
-* Reusable UI components
-* Intuitive navigation
-
-The interface also supports common UI states:
-
-* Loading indicators
-* Empty data states
-* Error handling messages
-
----
-
-# Technology Stack
-
-## Frontend
-
-* React
-* Vite
-* TypeScript
-* Axios
-* Tailwind CSS
-
-## Backend
-
-* Python
-* FastAPI
-* Pydantic validation
-
-## Database
-
-* MongoDB Atlas
-
-## Deployment
-
-Frontend: Vercel
-Backend: Render
+DevOps
+- Docker support
+- Environment variables
+- Cloud deployment ready
 
 ---
 
 # Project Structure
 
-```
 hrms-lite
 │
 ├── backend
-│   ├── app
-│   │   ├── api
-│   │   ├── models
-│   │   ├── services
-│   │   ├── schemas
-│   │   └── main.py
-│   │
-│   └── scripts
+│ ├── app
+│ │ ├── api
+│ │ ├── config
+│ │ ├── middleware
+│ │ ├── models
+│ │ ├── schemas
+│ │ ├── services
+│ │ └── main.py
+│ │
+│ ├── Dockerfile
+│ └── requirements.txt
 │
 ├── frontend
-│   ├── src
-│   │   ├── components
-│   │   ├── pages
-│   │   ├── hooks
-│   │   ├── services
-│   │   └── utils
+│ ├── src
+│ │ ├── components
+│ │ ├── pages
+│ │ ├── api
+│ │ └── App.jsx
+│ │
+│ └── Dockerfile
 │
-├── docker-compose.yml
-└── README.md
-```
+└── docker-compose.yml
 
 ---
 
-# API Endpoints
+# Backend Setup
 
-### Employees
+Clone repository
 
-| Method | Endpoint               | Description            |
-| ------ | ---------------------- | ---------------------- |
-| GET    | /api/v1/employees      | Retrieve all employees |
-| POST   | /api/v1/employees      | Create employee        |
-| DELETE | /api/v1/employees/{id} | Delete employee        |
+git clone https://github.com/shivay893896-droid/hrms-lite
 
----
+cd hrms-lite/backend
 
-### Attendance
 
-| Method | Endpoint           | Description            |
-| ------ | ------------------ | ---------------------- |
-| GET    | /api/v1/attendance | Get attendance records |
-| POST   | /api/v1/attendance | Mark attendance        |
+Create virtual environment
 
----
-
-# Running the Project Locally
-
-## Backend Setup
-
-Navigate to backend directory:
-
-```
-cd backend
-```
-
-Create virtual environment:
-
-```
 python -m venv venv
-```
 
-Activate environment:
+
+Activate
 
 Windows
 
-```
 venv\Scripts\activate
-```
 
-Install dependencies:
 
-```
+Install dependencies
+
 pip install -r requirements.txt
-```
 
-Run the server:
 
-```
+Run server
+
 uvicorn app.main:app --reload
-```
 
-Backend will run on:
 
-```
+Backend runs at
+
 http://localhost:8000
-```
-
-API Documentation:
-
-```
-http://localhost:8000/docs
-```
 
 ---
 
-## Frontend Setup
+# Frontend Setup
 
-Navigate to frontend directory:
-
-```
 cd frontend
-```
 
-Install dependencies:
-
-```
 npm install
-```
 
-Start development server:
-
-```
 npm run dev
-```
 
-Frontend runs on:
 
-```
+Frontend runs at
+
 http://localhost:5173
-```
 
 ---
 
-# Deployment
+# Docker Setup
 
-The application is deployed using cloud platforms.
+Build containers
 
-## Backend
+docker compose build
 
-Backend is deployed on **Render** and connected to **MongoDB Atlas**.
 
-The backend exposes public REST APIs used by the frontend.
+Start containers
 
-## Frontend
+docker compose up
 
-Frontend is deployed on **Vercel** and configured to communicate with the deployed backend API.
 
----
+Stop containers
 
-# Assumptions
-
-* The system assumes a single admin user.
-* Authentication and role-based access are not included.
-* Payroll and leave management features are outside the scope of this assignment.
+docker compose down
 
 ---
 
-# Possible Future Improvements
+# API Testing
 
-Although the system fulfills the assignment requirements, additional features could enhance the application:
+Swagger UI
 
-* Authentication and user roles
-* Attendance filtering by date
-* Employee profile editing
-* Monthly attendance reports
-* Analytics dashboard
-* Pagination optimization
-* Automated testing
+https://hrms-lite-pitl.onrender.com/docs
+
+
+Example API
+
+GET /api/v1/employees
 
 ---
 
-# Conclusion
+# Health Check
 
-HRMS Lite demonstrates a complete full-stack workflow including:
+GET /health
 
-* REST API development
-* Database design
-* Frontend user interface development
-* Validation and error handling
-* Cloud deployment
+Example response
 
-The project focuses on delivering a **clean, stable, and functional HR tool** aligned with the requirements of the assignment.
+{
+ "status": "healthy",
+ "database": "healthy",
+ "environment": "production"
+}
+
+---
+
+# Environment Variables
+
+Example .env
+
+ENVIRONMENT=production
+MONGODB_URL=mongodb+srv://username:password@cluster.mongodb.net
+MONGODB_DB_NAME=hrms_lite
+ALLOWED_ORIGINS=["https://hrms-lite-phi-two.vercel.app"]
+
+---
+
+# Author
+
+Aman Kumar
+Python Backend Developer 
+
+GitHub 
+https://github.com/shivay893896-droid
+
+---
+
+ If you like this project please give a star on GitH
