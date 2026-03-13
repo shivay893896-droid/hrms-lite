@@ -6,8 +6,9 @@ def setup_cors(app):
     """Setup CORS middleware"""
     app.add_middleware(
         CORSMiddleware,
-        allow_origins=settings.ALLOWED_ORIGINS,
+        allow_origins=["http://localhost:3000",
+            "https://hrms-lite-phi-two.vercel.app"],
         allow_credentials=True,
-        allow_methods=settings.ALLOWED_METHODS,
-        allow_headers=settings.ALLOWED_HEADERS,
+        allow_methods=["*"],
+        allow_headers=["*"],
     )
