@@ -80,6 +80,7 @@ DevOps
 ---
 
 # Project Structure
+'''
 
 hrms-lite
 │
@@ -106,7 +107,7 @@ hrms-lite
 │ └── Dockerfile
 │
 └── docker-compose.yml
-
+'''
 ---
 
 # Backend Setup
@@ -197,34 +198,34 @@ GET /api/v1/employees
 GET /health
 
 Example response
-
+'''
 {
  "status": "healthy",
  "database": "healthy",
  "environment": "production"
 }
-
+'''
 ---
 
 # Environment Variables
-
+'''
 Example .env
 
 ENVIRONMENT=production
 MONGODB_URL=mongodb+srv://username:password@cluster.mongodb.net
 MONGODB_DB_NAME=hrms_lite
 ALLOWED_ORIGINS=["https://hrms-lite-phi-two.vercel.app"]
-
+'''
 ---
 
 # Author
-
+'''
 Aman Kumar
 Python Backend Developer 
 
 GitHub 
 https://github.com/shivay893896-droid
-
+'''
 ---
 
  If you like this project please give a star on GitH
